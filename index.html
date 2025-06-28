@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Viaje - Aventura por la Selva Negra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-mountain"></i>
+                <span>Aventura Europea</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Inicio</a>
+                <a href="#itinerario" class="nav-link">Itinerario</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#consejos" class="nav-link">Consejos</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Aventura por la Selva Negra</h1>
+            <p class="hero-subtitle">Un viaje épico de 12 días por Europa: desde Madrid hasta la mágica Selva Negra alemana</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Días</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Países</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4000</span>
+                    <span class="stat-label">Kilómetros</span>
+                </div>
+            </div>
+            <a href="#itinerario" class="cta-button">
+                <i class="fas fa-route"></i>
+                Explorar Itinerario
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="images/dia5/colmar.jpg" alt="Colmar, Francia" />
+        </div>
+    </section>
+
+    <!-- Trip Overview -->
+    <section class="trip-overview">
+        <div class="container">
+            <h2 class="section-title">Nuestro Viaje</h2>
+            <div class="trip-info">
+                <div class="trip-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Fechas</h3>
+                    <p>14 - 25 de Julio, 2025</p>
+                </div>
+                <div class="trip-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Ruta</h3>
+                    <p>Madrid → Selva Negra → Salou</p>
+                </div>
+                <div class="trip-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Viajeros</h3>
+                    <p>2 Adultos + 1 Niño</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerario" class="itinerary">
+        <div class="container">
+            <h2 class="section-title">Itinerario Completo</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-day="1">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 1</span>
+                                <span class="day-date">14 Julio</span>
+                            </div>
+                            <h3>Madrid → Figueras</h3>
+                            <p>Comenzamos nuestra aventura con destino a Figueras, visitando el Teatro-Museo Dalí y el encantador pueblo de Cadaqués.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 700 km</span>
+                                <span><i class="fas fa-clock"></i> 8 horas</span>
+                            </div>
+                            <a href="dia1-figueras-cadaques.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="2">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 2</span>
+                                <span class="day-date">15 Julio</span>
+                            </div>
+                            <h3>Figueras → Montpellier</h3>
+                            <p>Cruzamos la frontera francesa hacia Montpellier, explorando la vibrante Place de la Comédie.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 200 km</span>
+                                <span><i class="fas fa-clock"></i> 2.5 horas</span>
+                            </div>
+                            <a href="dia2-Montpellier.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="3">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 3</span>
+                                <span class="day-date">16 Julio</span>
+                            </div>
+                            <h3>Montpellier → Lyon</h3>
+                            <p>Rumbo a Lyon, la capital gastronómica de Francia, con parada en los hermosos jardines de Nîmes.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 300 km</span>
+                                <span><i class="fas fa-clock"></i> 3 horas</span>
+                            </div>
+                            <a href="dia3-Lyon.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="4">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 4</span>
+                                <span class="day-date">17 Julio</span>
+                            </div>
+                            <h3>Lyon → Ginebra</h3>
+                            <p>Entrada a Suiza para descubrir el famoso Jet d'Eau y la elegancia de Ginebra.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 150 km</span>
+                                <span><i class="fas fa-clock"></i> 2 horas</span>
+                            </div>
+                            <a href="dia4-Suiza.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="5">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 5</span>
+                                <span class="day-date">18 Julio</span>
+                            </div>
+                            <h3>Berna → Colmar</h3>
+                            <p>De la capital suiza a la joya alsaciana: Colmar y su famosa "Pequeña Venecia".</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 150 km</span>
+                                <span><i class="fas fa-clock"></i> 2.5 horas</span>
+                            </div>
+                            <a href="dia5-Berna-Colmar.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="6">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 6</span>
+                                <span class="day-date">19 Julio</span>
+                            </div>
+                            <h3>Colmar → Estrasburgo</h3>
+                            <p>Excursión a Estrasburgo pasando por Friburgo, explorando la catedral y Petite France.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 205 km</span>
+                                <span><i class="fas fa-clock"></i> 3 horas</span>
+                            </div>
+                            <a href="dia6-Colmar-Estrasburgo.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="7">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card featured">
+                            <div class="day-header">
+                                <span class="day-number">Día 7</span>
+                                <span class="day-date">20 Julio</span>
+                            </div>
+                            <h3>Europa-Park Adventure</h3>
+                            <p>¡Día de diversión total! Uno de los parques temáticos más grandes de Europa nos espera.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 100 km</span>
+                                <span><i class="fas fa-clock"></i> Todo el día</span>
+                            </div>
+                            <a href="dia7-Europa-Park.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="8">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 8</span>
+                                <span class="day-date">21 Julio</span>
+                            </div>
+                            <h3>Corazón de la Selva Negra</h3>
+                            <p>Llegamos al corazón de nuestro viaje: la mágica Selva Negra alemana.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 140 km</span>
+                                <span><i class="fas fa-clock"></i> 2 horas</span>
+                            </div>
+                            <a href="dia8-colmarFerienwohnung.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="9">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 9</span>
+                                <span class="day-date">22 Julio</span>
+                            </div>
+                            <h3>Selva Negra → Zúrich</h3>
+                            <p>Paisajes alpinos espectaculares nos acompañan hacia la vibrante Zúrich.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 150 km</span>
+                                <span><i class="fas fa-clock"></i> 2 horas</span>
+                            </div>
+                            <a href="dia9-Ferienwohnung-Zurich.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="10">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 10</span>
+                                <span class="day-date">23 Julio</span>
+                            </div>
+                            <h3>Zúrich → Milán</h3>
+                            <p>Atravesando los Alpes hacia Italia, con paradas en Lucerna y el Lago de Como.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 305 km</span>
+                                <span><i class="fas fa-clock"></i> 4 horas</span>
+                            </div>
+                            <a href="dia10-Zurich-Milan.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="11">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 11</span>
+                                <span class="day-date">24 Julio</span>
+                            </div>
+                            <h3>Milán → Cannes</h3>
+                            <p>La Riviera Francesa nos recibe: Génova, Mónaco, Niza y finalmente Cannes.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 380 km</span>
+                                <span><i class="fas fa-clock"></i> 5 horas</span>
+                            </div>
+                            <a href="dia11-Milan-Cannes.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-day="12">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="day-card">
+                            <div class="day-header">
+                                <span class="day-number">Día 12</span>
+                                <span class="day-date">25 Julio</span>
+                            </div>
+                            <h3>Cannes → Salou</h3>
+                            <p>Gran final en PortAventura: diversión garantizada para cerrar nuestra aventura.</p>
+                            <div class="day-stats">
+                                <span><i class="fas fa-road"></i> 600 km</span>
+                                <span><i class="fas fa-clock"></i> 6.5 horas</span>
+                            </div>
+                            <a href="dia12-Cannes-Salou.html" class="day-link">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galería de Destinos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/dia1/cadaques.jpg" alt="Cadaqués">
+                    <div class="gallery-overlay">
+                        <h3>Cadaqués</h3>
+                        <p>Pueblo costero de Dalí</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/dia5/colmar.jpg" alt="Colmar">
+                    <div class="gallery-overlay">
+                        <h3>Colmar</h3>
+                        <p>La Pequeña Venecia</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/dia7/EuropaPark.jpg" alt="Europa-Park">
+                    <div class="gallery-overlay">
+                        <h3>Europa-Park</h3>
+                        <p>Diversión sin límites</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/dia10/como.jpg" alt="Lago de Como">
+                    <div class="gallery-overlay">
+                        <h3>Lago de Como</h3>
+                        <p>Belleza italiana</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/dia11/monaco.jpg" alt="Mónaco">
+                    <div class="gallery-overlay">
+                        <h3>Mónaco</h3>
+                        <p>Lujo y elegancia</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/dia4/ginebra.jpg" alt="Ginebra">
+                    <div class="gallery-overlay">
+                        <h3>Ginebra</h3>
+                        <p>El Jet d'Eau</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section id="consejos" class="tips">
+        <div class="container">
+            <h2 class="section-title">Consejos de Viaje</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Conducción</h3>
+                    <p>Recuerda la viñeta suiza obligatoria (40 CHF) para circular por autopistas.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-euro-sign"></i>
+                    <h3>Presupuesto</h3>
+                    <p>Calcula aproximadamente 200-300€ por día para una familia de 3 personas.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Idiomas</h3>
+                    <p>Español, francés, alemán e italiano. ¡Una aventura multilingüe!</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Fotografía</h3>
+                    <p>No olvides cargar las baterías. Los paisajes alpinos son impresionantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">¿Preguntas sobre el viaje?</h2>
+            <p class="contact-text">Si tienes alguna pregunta sobre nuestro itinerario o quieres consejos para tu propio viaje, no dudes en contactarnos.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>viaje@aventuraeuropea.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Madrid, España</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-mountain"></i>
+                    <span>Aventura Europea</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Inicio</a>
+                    <a href="#itinerario">Itinerario</a>
+                    <a href="#galeria">Galería</a>
+                    <a href="#consejos">Consejos</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aventura Europea. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
