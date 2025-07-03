@@ -46,7 +46,7 @@
                     <span class="stat-label">Países</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">4000</span>
+                    <span class="stat-number">3600</span>
                     <span class="stat-label">Kilómetros</span>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             </a>
         </div>
         <div class="hero-image">
-            <img src="images/dia5/colmar.jpg" alt="Colmar, Francia" />
+            <img src="images/dia5/Colmar.jpg" alt="Colmar, Francia" />
         </div>
     </section>
 
@@ -88,6 +88,27 @@
     <section id="itinerario" class="itinerary">
         <div class="container">
             <h2 class="section-title">Itinerario Completo</h2>
+            <!-- Barra de progreso acumulada de kilómetros -->
+            <div class="trip-progress-container">
+                <div class="trip-progress-bar">
+                    <span class="progress-segment day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                    <span class="progress-segment day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                    <span class="progress-segment day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                    <span class="progress-segment day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                    <span class="progress-segment day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                    <span class="progress-segment day6" style="width:5.7%" title="Día 6: 205 km"></span>
+                    <span class="progress-segment day7" style="width:2.8%" title="Día 7: 100 km"></span>
+                    <span class="progress-segment day8" style="width:3.9%" title="Día 8: 140 km"></span>
+                    <span class="progress-segment day9" style="width:4.2%" title="Día 9: 150 km"></span>
+                    <span class="progress-segment day10" style="width:8.5%" title="Día 10: 305 km"></span>
+                    <span class="progress-segment day11" style="width:10.6%" title="Día 11: 380 km"></span>
+                    <span class="progress-segment day12" style="width:16.7%" title="Día 12: 600 km"></span>
+                </div>
+                <div class="trip-progress-labels">
+                    <span>0 km</span>
+                    <span>3600 km</span>
+                </div>
+            </div>
             <div class="timeline">
                 <div class="timeline-item" data-day="1">
                     <div class="timeline-marker"></div>
@@ -96,11 +117,17 @@
                             <div class="day-header">
                                 <span class="day-number">Día 1</span>
                                 <span class="day-date">14 Julio</span>
+                                <span class="flag-icon" title="España"><img src="https://flagcdn.com/es.svg" alt="España" class="flag-img"></span>
                             </div>
                             <h3>Madrid → Figueras</h3>
                             <p>Comenzamos nuestra aventura con destino a Figueras, visitando el Teatro-Museo Dalí y el encantador pueblo de Cadaqués.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 700 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 2900 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 8 horas</span>
                             </div>
                             <a href="dia1-figueras-cadaques.html" class="day-link">Ver detalles</a>
@@ -115,11 +142,18 @@
                             <div class="day-header">
                                 <span class="day-number">Día 2</span>
                                 <span class="day-date">15 Julio</span>
+                                <span class="flag-icon" title="Francia"><img src="https://flagcdn.com/fr.svg" alt="Francia" class="flag-img"></span>
                             </div>
                             <h3>Figueras → Montpellier</h3>
                             <p>Cruzamos la frontera francesa hacia Montpellier, explorando la vibrante Place de la Comédie.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 200 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 2700 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 2.5 horas</span>
                             </div>
                             <a href="dia2-Montpellier.html" class="day-link">Ver detalles</a>
@@ -134,11 +168,19 @@
                             <div class="day-header">
                                 <span class="day-number">Día 3</span>
                                 <span class="day-date">16 Julio</span>
+                                <span class="flag-icon" title="Francia"><img src="https://flagcdn.com/fr.svg" alt="Francia" class="flag-img"></span>
                             </div>
                             <h3>Montpellier → Lyon</h3>
                             <p>Rumbo a Lyon, la capital gastronómica de Francia, con parada en los hermosos jardines de Nîmes.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 300 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 2400 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 3 horas</span>
                             </div>
                             <a href="dia3-Lyon.html" class="day-link">Ver detalles</a>
@@ -153,11 +195,20 @@
                             <div class="day-header">
                                 <span class="day-number">Día 4</span>
                                 <span class="day-date">17 Julio</span>
+                                <span class="flag-icon" title="Suiza"><img src="https://flagcdn.com/ch.svg" alt="Suiza" class="flag-img"></span>
                             </div>
                             <h3>Lyon → Ginebra</h3>
                             <p>Entrada a Suiza para descubrir el famoso Jet d'Eau y la elegancia de Ginebra.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 280 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 2120 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 3 horas</span>
                             </div>
                             <a href="dia4-Suiza.html" class="day-link">Ver detalles</a>
@@ -172,11 +223,21 @@
                             <div class="day-header">
                                 <span class="day-number">Día 5</span>
                                 <span class="day-date">18 Julio</span>
+                                <span class="flag-icon" title="Suiza"><img src="https://flagcdn.com/ch.svg" alt="Suiza" class="flag-img"></span>
                             </div>
                             <h3>Berna → Colmar</h3>
                             <p>De la capital suiza a la joya alsaciana: Colmar y su famosa "Pequeña Venecia".</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 150 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                    <span class="progress day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 1970 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 2.5 horas</span>
                             </div>
                             <a href="dia5-Berna-Colmar.html" class="day-link">Ver detalles</a>
@@ -191,11 +252,22 @@
                             <div class="day-header">
                                 <span class="day-number">Día 6</span>
                                 <span class="day-date">19 Julio</span>
+                                <span class="flag-icon" title="Francia"><img src="https://flagcdn.com/fr.svg" alt="Francia" class="flag-img"></span>
                             </div>
                             <h3>Colmar → Estrasburgo</h3>
                             <p>Excursión a Estrasburgo pasando por Friburgo, explorando la catedral y Petite France.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 205 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                    <span class="progress day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                                    <span class="progress day6" style="width:5.7%" title="Día 6: 205 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 1765 km</span>
+                                
                                 <span><i class="fas fa-clock"></i> 3 horas</span>
                             </div>
                             <a href="dia6-Colmar-Estrasburgo.html" class="day-link">Ver detalles</a>
@@ -210,11 +282,23 @@
                             <div class="day-header">
                                 <span class="day-number">Día 7</span>
                                 <span class="day-date">20 Julio</span>
+                                <span class="flag-icon" title="Alemania"><img src="https://flagcdn.com/de.svg" alt="Alemania" class="flag-img"></span>
                             </div>
                             <h3>Europa-Park Adventure</h3>
                             <p>¡Día de diversión total! Uno de los parques temáticos más grandes de Europa nos espera.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 100 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                    <span class="progress day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                                    <span class="progress day6" style="width:5.7%" title="Día 6: 205 km"></span>
+                                    <span class="progress day7" style="width:2.8%" title="Día 7: 100 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 1665 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> Todo el día</span>
                             </div>
                             <a href="dia7-Europa-Park.html" class="day-link">Ver detalles</a>
@@ -229,11 +313,24 @@
                             <div class="day-header">
                                 <span class="day-number">Día 8</span>
                                 <span class="day-date">21 Julio</span>
+                                <span class="flag-icon" title="Alemania"><img src="https://flagcdn.com/de.svg" alt="Alemania" class="flag-img"></span>
                             </div>
                             <h3>Corazón de la Selva Negra</h3>
                             <p>Llegamos al corazón de nuestro viaje: la mágica Selva Negra alemana.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 140 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                    <span class="progress day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                                    <span class="progress day6" style="width:5.7%" title="Día 6: 205 km"></span>
+                                    <span class="progress day7" style="width:2.8%" title="Día 7: 100 km"></span>
+                                    <span class="progress day8" style="width:3.9%" title="Día 8: 140 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 1525 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 2 horas</span>
                             </div>
                             <a href="dia8-colmarFerienwohnung.html" class="day-link">Ver detalles</a>
@@ -248,11 +345,25 @@
                             <div class="day-header">
                                 <span class="day-number">Día 9</span>
                                 <span class="day-date">22 Julio</span>
+                                <span class="flag-icon" title="Suiza"><img src="https://flagcdn.com/ch.svg" alt="Suiza" class="flag-img"></span>
                             </div>
                             <h3>Selva Negra → Zúrich</h3>
                             <p>Paisajes alpinos espectaculares nos acompañan hacia la vibrante Zúrich.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 150 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                    <span class="progress day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                                    <span class="progress day6" style="width:5.7%" title="Día 6: 205 km"></span>
+                                    <span class="progress day7" style="width:2.8%" title="Día 7: 100 km"></span>
+                                    <span class="progress day8" style="width:3.9%" title="Día 8: 140 km"></span>
+                                    <span class="progress day9" style="width:4.2%" title="Día 9: 150 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 1375 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 2 horas</span>
                             </div>
                             <a href="dia9-Ferienwohnung-Zurich.html" class="day-link">Ver detalles</a>
@@ -267,11 +378,26 @@
                             <div class="day-header">
                                 <span class="day-number">Día 10</span>
                                 <span class="day-date">23 Julio</span>
+                                <span class="flag-icon" title="Italia"><img src="https://flagcdn.com/it.svg" alt="Italia" class="flag-img"></span>
                             </div>
                             <h3>Zúrich → Milán</h3>
                             <p>Atravesando los Alpes hacia Italia, con paradas en Lucerna y el Lago de Como.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 305 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                    <span class="progress day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                                    <span class="progress day6" style="width:5.7%" title="Día 6: 205 km"></span>
+                                    <span class="progress day7" style="width:2.8%" title="Día 7: 100 km"></span>
+                                    <span class="progress day8" style="width:3.9%" title="Día 8: 140 km"></span>
+                                    <span class="progress day9" style="width:4.2%" title="Día 9: 150 km"></span>
+                                    <span class="progress day10" style="width:8.5%" title="Día 10: 305 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 1070 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 4 horas</span>
                             </div>
                             <a href="dia10-Zurich-Milan.html" class="day-link">Ver detalles</a>
@@ -286,11 +412,27 @@
                             <div class="day-header">
                                 <span class="day-number">Día 11</span>
                                 <span class="day-date">24 Julio</span>
+                                <span class="flag-icon" title="Francia"><img src="https://flagcdn.com/fr.svg" alt="Francia" class="flag-img"></span>
                             </div>
                             <h3>Milán → Cannes</h3>
                             <p>La Riviera Francesa nos recibe: Génova, Mónaco, Niza y finalmente Cannes.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 380 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                    <span class="progress day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                                    <span class="progress day6" style="width:5.7%" title="Día 6: 205 km"></span>
+                                    <span class="progress day7" style="width:2.8%" title="Día 7: 100 km"></span>
+                                    <span class="progress day8" style="width:3.9%" title="Día 8: 140 km"></span>
+                                    <span class="progress day9" style="width:4.2%" title="Día 9: 150 km"></span>
+                                    <span class="progress day10" style="width:8.5%" title="Día 10: 305 km"></span>
+                                    <span class="progress day11" style="width:10.6%" title="Día 11: 380 km"></span>
+                                </span>
+                                <span class="km-remaining">Faltan 690 km</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 5 horas</span>
                             </div>
                             <a href="dia11-Milan-Cannes.html" class="day-link">Ver detalles</a>
@@ -305,11 +447,30 @@
                             <div class="day-header">
                                 <span class="day-number">Día 12</span>
                                 <span class="day-date">25 Julio</span>
+                                <span class="flag-icon" title="España"><img src="https://flagcdn.com/es.svg" alt="España" class="flag-img"></span>
                             </div>
                             <h3>Cannes → Salou</h3>
                             <p>Gran final en PortAventura: diversión garantizada para cerrar nuestra aventura.</p>
                             <div class="day-stats">
                                 <span><i class="fas fa-road"></i> 600 km</span>
+                                <span class="progress-bar">
+                                    <span class="progress day1" style="width:19.4%" title="Día 1: 700 km"></span>
+                                    <span class="progress day2" style="width:5.6%" title="Día 2: 200 km"></span>
+                                    <span class="progress day3" style="width:8.3%" title="Día 3: 300 km"></span>
+                                    <span class="progress day4" style="width:7.8%" title="Día 4: 280 km"></span>
+                                    <span class="progress day5" style="width:4.2%" title="Día 5: 150 km"></span>
+                                    <span class="progress day6" style="width:5.7%" title="Día 6: 205 km"></span>
+                                    <span class="progress day7" style="width:2.8%" title="Día 7: 100 km"></span>
+                                    <span class="progress day8" style="width:3.9%" title="Día 8: 140 km"></span>
+                                    <span class="progress day9" style="width:4.2%" title="Día 9: 150 km"></span>
+                                    <span class="progress day10" style="width:8.5%" title="Día 10: 305 km"></span>
+                                    <span class="progress day11" style="width:10.6%" title="Día 11: 380 km"></span>
+                                    <span class="progress day12" style="width:16.7%" title="Día 12: 600 km"></span>
+                                </span>
+                                <span class="km-remaining">¡Meta alcanzada!</span>
+                                </span>
+                                <span class="km-remaining">¡Meta alcanzada!</span>
+                                </span>
                                 <span><i class="fas fa-clock"></i> 6.5 horas</span>
                             </div>
                             <a href="dia12-Cannes-Salou.html" class="day-link">Ver detalles</a>
@@ -333,7 +494,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/dia5/colmar.jpg" alt="Colmar">
+                    <img src="images/dia5/Colmar.jpg" alt="Colmar">
                     <div class="gallery-overlay">
                         <h3>Colmar</h3>
                         <p>La Pequeña Venecia</p>
@@ -354,14 +515,14 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/dia11/monaco.jpg" alt="Mónaco">
+                    <img src="images/dia11/Monaco.jpg" alt="Mónaco">
                     <div class="gallery-overlay">
                         <h3>Mónaco</h3>
                         <p>Lujo y elegancia</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/dia4/ginebra.jpg" alt="Ginebra">
+                    <img src="images/dia4/Ginebra.jpg" alt="Ginebra">
                     <div class="gallery-overlay">
                         <h3>Ginebra</h3>
                         <p>El Jet d'Eau</p>
@@ -444,6 +605,105 @@
         </div>
     </footer>
 
+    <style>
+    .km-remaining {
+        display: inline-block;
+        margin-left: 10px;
+        color: #2196f3;
+        font-weight: 500;
+        font-size: 0.98em;
+        vertical-align: middle;
+    }
+    .trip-progress-container {
+        margin: 30px 0 20px 0;
+    }
+    .trip-progress-bar {
+        width: 100%;
+        max-width: 700px;
+        height: 18px;
+        background: #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        margin: 0 auto 6px auto;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+    .progress-segment {
+        display: inline-block;
+        height: 100%;
+        transition: width 0.4s;
+    }
+    .progress-segment.day1 { background: linear-gradient(90deg, #4caf50 60%, #2196f3 100%); }
+    .progress-segment.day2 { background: linear-gradient(90deg, #ff9800 60%, #ff5722 100%); }
+    .progress-segment.day3 { background: linear-gradient(90deg, #9c27b0 60%, #673ab7 100%); }
+    .progress-segment.day4 { background: linear-gradient(90deg, #00bcd4 60%, #009688 100%); }
+    .progress-segment.day5 { background: linear-gradient(90deg, #8bc34a 60%, #cddc39 100%); }
+    .progress-segment.day6 { background: linear-gradient(90deg, #ffc107 60%, #ffeb3b 100%); }
+    .progress-segment.day7 { background: linear-gradient(90deg, #e91e63 60%, #f44336 100%); }
+    .progress-segment.day8 { background: linear-gradient(90deg, #3f51b5 60%, #2196f3 100%); }
+    .progress-segment.day9 { background: linear-gradient(90deg, #009688 60%, #4caf50 100%); }
+    .progress-segment.day10 { background: linear-gradient(90deg, #ff5722 60%, #795548 100%); }
+    .progress-segment.day11 { background: linear-gradient(90deg, #607d8b 60%, #00bcd4 100%); }
+    .progress-segment.day12 { background: linear-gradient(90deg, #ffd600 60%, #ffea00 100%); }
+    .trip-progress-labels {
+        display: flex;
+        justify-content: space-between;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 0.95em;
+        color: #888;
+        padding: 0 2px;
+    }
+    .flag-icon {
+        display: inline-block;
+        margin-left: 8px;
+        vertical-align: middle;
+    }
+    .flag-img {
+        width: 24px;
+        height: 16px;
+        border-radius: 2px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+        border: 1px solid #eee;
+        object-fit: cover;
+    }
+    .progress-bar {
+        display: inline-block;
+        width: 100px;
+        height: 8px;
+        background: #e0e0e0;
+        border-radius: 5px;
+        margin: 0 10px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+    }
+    .progress-bar .progress {
+        display: block;
+        height: 100%;
+        border-radius: 5px 0 0 5px;
+        transition: width 0.4s;
+    }
+    /* Colores personalizados para cada día */
+    .progress-bar .progress.day1 { background: linear-gradient(90deg, #4caf50 60%, #2196f3 100%); }
+    .progress-bar .progress.day2 { background: linear-gradient(90deg, #ff9800 60%, #ff5722 100%); }
+    .progress-bar .progress.day3 { background: linear-gradient(90deg, #9c27b0 60%, #673ab7 100%); }
+    .progress-bar .progress.day4 { background: linear-gradient(90deg, #00bcd4 60%, #009688 100%); }
+    .progress-bar .progress.day5 { background: linear-gradient(90deg, #8bc34a 60%, #cddc39 100%); }
+    .progress-bar .progress.day6 { background: linear-gradient(90deg, #ffc107 60%, #ffeb3b 100%); }
+    .progress-bar .progress.day7 { background: linear-gradient(90deg, #e91e63 60%, #f44336 100%); }
+    .progress-bar .progress.day8 { background: linear-gradient(90deg, #3f51b5 60%, #2196f3 100%); }
+    .progress-bar .progress.day9 { background: linear-gradient(90deg, #009688 60%, #4caf50 100%); }
+    .progress-bar .progress.day10 { background: linear-gradient(90deg, #ff5722 60%, #795548 100%); }
+    .progress-bar .progress.day11 { background: linear-gradient(90deg, #607d8b 60%, #00bcd4 100%); }
+    .progress-bar .progress.day12 { background: linear-gradient(90deg, #ffd600 60%, #ffea00 100%); }
+    .progress-bar .progress.full { width: 100% !important; border-radius: 5px; }
+    .day-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    </style>
     <script src="script.js"></script>
 </body>
 </html>
