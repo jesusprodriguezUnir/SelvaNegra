@@ -62,6 +62,22 @@
                     <li><strong>Total estimado:</strong> <span style="color:#4CAF50; font-weight:bold;">202,42 €</span></li>
                 </ul>
             </div>
+            <div id="weather-widget">
+                <h3><i class="fas fa-cloud-sun"></i> El Tiempo Actual</h3>
+                <div class="weather-locations">
+                    <!-- Las ubicaciones se inyectarán dinámicamente -->
+                </div>
+                <div class="last-updated" id="last-updated"></div>
+            </div>
+            <script src="weather-widget.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    console.log('Inicializando el widget meteorológico en la página 9');
+                    initializeWeatherWidget([
+                        { id: 'weather-zurich', name: 'Zúrich', lat: 47.3769, lon: 8.5417 }
+                    ]);
+                });
+            </script>
         </div>
     </div>
     <footer>

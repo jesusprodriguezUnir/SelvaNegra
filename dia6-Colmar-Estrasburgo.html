@@ -80,6 +80,22 @@
                     <li><strong>Total estimado:</strong> <span style="color:#4CAF50; font-weight:bold;">265 €</span></li>
                 </ul>
             </div>
+            <div id="weather-widget">
+                <h3><i class="fas fa-cloud-sun"></i> El Tiempo Actual</h3>
+                <div class="weather-locations">
+                    <!-- Las ubicaciones se inyectarán dinámicamente -->
+                </div>
+                <div class="last-updated" id="last-updated"></div>
+            </div>
+            <script src="weather-widget.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    console.log('Inicializando el widget meteorológico en la página 6');
+                    initializeWeatherWidget([
+                        { id: 'weather-estrasburgo', name: 'Estrasburgo', lat: 48.5734, lon: 7.7521 }
+                    ]);
+                });
+            </script>
         </div>
     </div>
     <footer>

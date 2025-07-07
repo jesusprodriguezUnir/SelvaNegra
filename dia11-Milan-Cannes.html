@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Día 11: Milán - Cannes</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="weather-widget.css">
 </head>
 <body>
     <header>
@@ -106,6 +107,23 @@
                     <li><strong>Total estimado:</strong> <span style="color:#4CAF50; font-weight:bold;">315,92 €</span></li>
                 </ul>
             </div>
+
+            <div class="weather-widget-container">
+                <h3>Previsión del tiempo</h3>
+                <div class="weather-locations">
+                    <div id="weather-widget-milan" class="weather-location"></div>
+                    <div id="weather-widget-cannes" class="weather-location"></div>
+                </div>
+            </div>
+            <script src="weather-widget.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    initializeWeatherWidget([
+                        { id: 'weather-widget-milan', name: 'Milán', lat: 45.4642, lon: 9.1900 },
+                        { id: 'weather-widget-cannes', name: 'Cannes', lat: 43.5528, lon: 7.0174 }
+                    ]);
+                });
+            </script>
         </div>
     </div>
     <footer>

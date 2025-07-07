@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Día 5: Berna - Colmar</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="weather-widget.css">
 </head>
 <body>
     <header>
@@ -89,6 +90,23 @@
                     <li><strong>Total estimado:</strong> <span style="color:#4CAF50; font-weight:bold;">268 €</span></li>
                 </ul>
             </div>
+            <div id="weather-widget">
+                <h3><i class="fas fa-cloud-sun"></i> El Tiempo Actual</h3>
+                <div class="weather-locations">
+                    <!-- Las ubicaciones se inyectarán dinámicamente -->
+                </div>
+                <div class="last-updated" id="last-updated"></div>
+            </div>
+            <script src="weather-widget.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    console.log('Inicializando el widget meteorológico en la página 5');
+                    initializeWeatherWidget([
+                        { id: 'weather-berna', name: 'Berna', lat: 46.9481, lon: 7.4474 },
+                        { id: 'weather-colmar', name: 'Colmar', lat: 48.0795, lon: 7.3585 }
+                    ]);
+                });
+            </script>
         </div>
     </div>
     <footer>

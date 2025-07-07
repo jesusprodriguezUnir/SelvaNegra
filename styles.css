@@ -987,6 +987,48 @@ footer p {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* Consolidación de estilos para el widget meteorológico */
+.weather-widget-container {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.weather-widget-container h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.weather-locations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.weather-location {
+    flex: 1 1 calc(50% - 15px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.weather-location h4 {
+    margin: 0 0 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.weather-location .loading {
+    font-size: 0.9em;
+    color: #888;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {

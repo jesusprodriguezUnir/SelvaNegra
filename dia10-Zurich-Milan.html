@@ -91,16 +91,20 @@
             </div>
 
             <h3>Gastos</h3>
-            <div class="expenses-section">
-                <h3>Gastos</h3>
-                <p>En esta ruta, los gastos aproximados son los siguientes:</p>
-                <ul>
-                    <li><strong>Peajes:</strong> <span style="color:#4CAF50;">20 €</span> <span style="font-size: 0.9em; color: #888;">(estimado para la ruta)</span></li>
-                    <li><strong>Gasolina:</strong> <span style="color:#4CAF50;">50 €</span> <span style="font-size: 0.9em; color: #888;">(305 km con un consumo de 7 l/100 km y precio de 1.40 €/l)</span></li>
-                    <li><strong>Comida:</strong> <span style="color:#4CAF50;">100 €</span> <span style="font-size: 0.9em; color: #888;">(estimado para dos adultos)</span></li>
-                    <li><strong>Alojamiento:</strong> <span style="color:#4CAF50;">125,90 €</span> <span style="font-size: 0.9em; color: #888;">(precio total de la reserva)</span></li>
-                    <li><strong>Total estimado:</strong> <span style="color:#4CAF50; font-weight:bold;">295,90 €</span></li>
-                </ul>
+            <p>En esta ruta, los gastos aproximados son los siguientes:</p>
+            <ul>
+                <li><strong>Peajes:</strong> <span style="color:#4CAF50;">20 €</span> <span style="font-size: 0.9em; color: #888;">(estimado para la ruta)</span></li>
+                <li><strong>Gasolina:</strong> <span style="color:#4CAF50;">50 €</span> <span style="font-size: 0.9em; color: #888;">(305 km con un consumo de 7 l/100 km y precio de 1.40 €/l)</span></li>
+                <li><strong>Comida:</strong> <span style="color:#4CAF50;">100 €</span> <span style="font-size: 0.9em; color: #888;">(estimado para dos adultos)</span></li>
+                <li><strong>Alojamiento:</strong> <span style="color:#4CAF50;">125,90 €</span> <span style="font-size: 0.9em; color: #888;">(precio total de la reserva)</span></li>
+                <li><strong>Total estimado:</strong> <span style="color:#4CAF50; font-weight:bold;">295,90 €</span></li>
+            </ul>
+
+            <div class="weather-widget-container">
+                <h3>Previsión del tiempo</h3>
+                <div class="weather-locations"></div>
+                <div id="weather-widget-zurich"></div>
+                <div id="weather-widget-milan"></div>
             </div>
         </div>
     </div>
@@ -111,5 +115,14 @@
         </div>
         <p style="text-align: center; margin-top: 10px;">&copy; 2025 Mi Viaje por la Selva Negra</p>
     </footer>
+    <script src="weather-widget.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeWeatherWidget([
+                { id: 'weather-widget-zurich', name: 'Zúrich', lat: 47.3769, lon: 8.5417 },
+                { id: 'weather-widget-milan', name: 'Milán', lat: 45.4642, lon: 9.1900 }
+            ]);
+        });
+    </script>
 </body>
 </html>

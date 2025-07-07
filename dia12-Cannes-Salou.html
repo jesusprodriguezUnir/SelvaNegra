@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Día 12: Cannes - Salou</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="weather-widget.css">
 </head>
 <body>
     <header>
@@ -71,6 +72,22 @@
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            
+            <div class="weather-widget-container">
+                <h3>Previsión del tiempo</h3>
+                <div id="weather-widget-cannes"></div>
+                <div id="weather-widget-salou"></div>
+            </div>
+            <script src="weather-widget.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    initializeWeatherWidget([
+                        { id: 'weather-widget-cannes', name: 'Cannes', lat: 43.552847, lon: 7.017369 },
+                        { id: 'weather-widget-salou', name: 'Salou', lat: 41.077271, lon: 1.131593 }
+                    ]);
+                });
+            </script>
+
             <div class="expenses-section">
                 <h3>Gastos</h3>
                 <p>En esta ruta, los gastos aproximados son los siguientes:</p>

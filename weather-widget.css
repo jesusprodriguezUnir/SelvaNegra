@@ -1,0 +1,120 @@
+/* CSS para el widget del tiempo */
+.weather-widget {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.weather-widget h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.weather-locations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.weather-location {
+    flex: 1 1 calc(50% - 15px);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.weather-location:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.weather-location h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.weather-icon {
+    font-size: 2em;
+    margin-right: 10px;
+    color: #4CAF50;
+}
+
+.weather-temp {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+.weather-condition {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.weather-detail {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.weather-detail i {
+    color: #4CAF50;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    opacity: 0.7;
+}
+
+.error {
+    color: #d9534f;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.last-updated {
+    font-size: 0.8em;
+    color: #999;
+    text-align: right;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .weather-locations {
+        grid-template-columns: 1fr;
+    }
+    
+    .weather-main {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .weather-details {
+        grid-template-columns: 1fr;
+    }
+}
