@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Recomendaciones del Viaje</title>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-lightbulb"></i> Recomendaciones del Viaje</h1>
+        <p><i class="fas fa-info-circle"></i> Consejos útiles y sugerencias para tu aventura por la Selva Negra y Europa</p>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2><i class="fas fa-thumbs-up"></i> Consejos Generales</h2>
+            <ul>
+                <li>Lleva siempre algo de efectivo, no todos los comercios aceptan tarjeta.</li>
+                <li>Descarga mapas offline de Google Maps antes de salir de España.</li>
+                <li>Ten a mano la documentación (DNI, pasaporte, reservas, seguro de viaje).</li>
+                <li>Revisa el estado del coche antes de salir: neumáticos, aceite, luces y seguro.</li>
+                <li>Utiliza apps como Park4Night para encontrar parkings y áreas de descanso.</li>
+            </ul>
+            <h2><i class="fas fa-utensils"></i> Gastronomía y Restaurantes</h2>
+            <ul>
+                <li>Prueba la tarta Selva Negra en cualquier pastelería local.</li>
+                <li>En Alsacia, no te pierdas la tarte flambée y los vinos blancos.</li>
+                <li>En Suiza, aprovecha para probar el chocolate y el queso local.</li>
+                <li>Reserva con antelación en restaurantes populares, sobre todo en temporada alta.</li>
+            </ul>
+            <h2><i class="fas fa-bed"></i> Alojamiento</h2>
+            <ul>
+                <li>Guarda siempre una copia digital y física de tus reservas.</li>
+                <li>Consulta las políticas de check-in y check-out, pueden variar mucho.</li>
+                <li>En apartamentos, pregunta por el sistema de recogida de llaves.</li>
+            </ul>
+            <h2><i class="fas fa-car"></i> Conducción y Carreteras</h2>
+            <ul>
+                <li>En Suiza y Austria es obligatorio llevar viñeta (pegatina de autopista).</li>
+                <li>Respeta los límites de velocidad, hay muchos radares.</li>
+                <li>En Alemania, algunas autopistas no tienen límite, pero conduce con precaución.</li>
+                <li>Utiliza Google Maps o Waze para evitar atascos y obras.</li>
+            </ul>
+            <h2><i class="fas fa-mobile-alt"></i> Apps útiles</h2>
+            <ul>
+                <li>Google Maps, Park4Night, Booking, TripAdvisor, y traductor de Google.</li>
+                <li>Descarga las apps de los hoteles si ofrecen check-in online.</li>
+            </ul>
+            <h2><i class="fas fa-cloud-sun"></i> El Tiempo</h2>
+            <div class="weather-widget" id="weather-widget-recomendaciones">
+                <h3><i class="fas fa-cloud-sun"></i> El Tiempo Actual</h3>
+                <div class="weather-locations">
+                    <div class="weather-location" id="weather-freiburg">
+                        <h4><i class="fas fa-map-marker-alt"></i> Friburgo</h4>
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i> Cargando datos del tiempo...
+                        </div>
+                    </div>
+                    <div class="weather-location" id="weather-colmar">
+                        <h4><i class="fas fa-map-marker-alt"></i> Colmar</h4>
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i> Cargando datos del tiempo...
+                        </div>
+                    </div>
+                </div>
+                <div class="last-updated" id="last-updated-recomendaciones"></div>
+            </div>
+        </div>
+    </div>
+    <script src="weather-widget.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeWeatherWidget([
+                { id: 'weather-freiburg', name: 'Friburgo', lat: 47.9990, lon: 7.8421 },
+                { id: 'weather-colmar', name: 'Colmar', lat: 48.0799, lon: 7.3585 }
+            ]);
+        });
+    </script>
+    <footer>
+        <div class="navigation-buttons">
+            <a href="index.html">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+        <p>&copy; 2025 Mi Viaje por la Selva Negra - Aventura Europea</p>
+    </footer>
+</body>
+</html>
