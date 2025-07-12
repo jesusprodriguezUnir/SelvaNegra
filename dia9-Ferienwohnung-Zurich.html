@@ -15,6 +15,16 @@
         <div class="content">
             <h2>Itinerario del Día</h2>
             <p>El noveno día comienza con la salida desde <strong>Ferienwohnung Bohnert-Arias</strong> en Alemania hacia <strong>Zúrich</strong>, Suiza. Durante el trayecto, podrás disfrutar de paisajes espectaculares y explorar Zúrich, una de las ciudades más vibrantes de Suiza.</p>
+            <div class="plan-llegada">
+                <h3>¿Cómo llegar a Zúrich antes de las 13:00?</h3>
+                <ul>
+                    <li><strong>Hora recomendada de salida:</strong> 8:30 h desde Bad Peterstal-Griesbach para evitar tráfico y llegar con margen.</li>
+                    <li><strong>Duración estimada del trayecto:</strong> 2 horas (150 km).</li>
+                    <li><strong>Paradas recomendadas:</strong> Haz una breve parada técnica (10-15 min) en una área de servicio en la autopista A5 antes de cruzar a Suiza.</li>
+                    <li><strong>Consejo:</strong> Lleva francos suizos o tarjeta para el peaje/vignette suiza y ten a mano la documentación del coche.</li>
+                    <li><strong>Llegada prevista:</strong> Entre 10:45 y 11:00 h, lo que te permitirá dejar el equipaje en el hotel y empezar a explorar Zúrich antes de las 13:00.</li>
+                </ul>
+            </div>
             <h3>Ruta sugerida</h3>
             <p>La distancia desde Ferienwohnung Bohnert-Arias hasta Zúrich es de aproximadamente <strong>150 km</strong>, con un tiempo estimado de viaje de <strong>2 horas</strong>. A continuación, se destacan paradas interesantes en Zúrich:</p>
             <ul>
@@ -27,6 +37,8 @@
                 <img src="images/dia9/zurich.jpg" alt="Zúrich, Suiza" style="width:100%; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
                 <p>Vista del Lago de Zúrich, una parada ideal para relajarse.</p>
             </div>
+            <h3>Dirección de encuentro con Salvatore y Mario Mangano</h3>
+            <p><strong>Schipfe 45<br>8001 Zurich</strong></p>
             <h3>Mapa de la Ruta</h3>
             <div class="map-container">
                 <iframe 
@@ -38,15 +50,16 @@
                     loading="lazy">
                 </iframe>
             </div>
-            <h3>Alojamiento:</h3>
-            <p>Te alojarás en Zúrich en el siguiente establecimiento:</p>
-            <p><strong>Hotel Central Plaza</strong></p>
+            <h3>Alojamiento: Confirmado</h3>
+            <p>Tu reserva en <strong>Prize by Radisson, Zurich Affoltern am Albis</strong> está confirmada.</p>
             <ul>
-                <li><strong>Precio de la habitación:</strong> € 115,40</li>
-                <li><strong>IVA (3,80%):</strong> € 5</li>
-                <li><strong>Cargo de servicio:</strong> € 2,63</li>
-                <li><strong>Precio total (para 2 personas):</strong> € 122,42 (~CHF 114,75)</li>
+                <li><strong>Email de confirmación enviado a:</strong> jesusprodriguez@gmail.com</li>
+                <li><strong>Recomendación:</strong> Guarda la confirmación en el móvil o imprímela si lo prefieres.</li>
+                <li><strong>Hora de llegada aprobada:</strong> Check-in entre 17:00 y 18:00.</li>
+                <li><strong>Petición especial:</strong> El alojamiento te enviará un mensaje a través de la bandeja de entrada.</li>
+                <li><strong>Approximate time of arrival:</strong> between 17:00 and 18:00</li>
             </ul>
+            <p style="color:#d63031; font-size:0.95em;">Por motivos de seguridad, nunca compartas tus datos personales ni los de tu tarjeta de crédito por teléfono, email o chat.</p>
             <p><a href="Hoteles/Dia9.pdf" target="_blank">
                 <i class="fas fa-file-pdf"></i> Ver PDF de la reserva
             </a></p>
@@ -63,20 +76,217 @@
                 </ul>
             </div>
             <div id="weather-widget">
-                <h3><i class="fas fa-cloud-sun"></i> El Tiempo Actual</h3>
+                <h3><i class="fas fa-cloud-sun"></i> El Tiempo en Zúrich</h3>
                 <div class="weather-locations">
-                    <!-- Las ubicaciones se inyectarán dinámicamente -->
+                    <div class="weather-location" id="weather-zurich">
+                        <h4><i class="fas fa-map-marker-alt"></i> Zúrich</h4>
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i> Cargando datos del tiempo...
+                        </div>
+                    </div>
                 </div>
                 <div class="last-updated" id="last-updated"></div>
             </div>
-            <script src="weather-widget.js"></script>
+            <style>
+            .weather-widget {
+                background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+                border-radius: 20px;
+                padding: 2rem;
+                margin: 2rem 0;
+                color: white;
+                box-shadow: 0 15px 35px rgba(116, 185, 255, 0.3);
+            }
+            .weather-widget h3 {
+                text-align: center;
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .weather-locations {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+            .weather-location {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 1.5rem;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .weather-location:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            }
+            .weather-location h4 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                color: #fff;
+            }
+            .weather-main {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+            .weather-icon {
+                font-size: 3rem;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .weather-temp {
+                font-size: 2.5rem;
+                font-weight: 700;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .weather-condition {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                opacity: 0.9;
+            }
+            .weather-details {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+            }
+            .weather-detail {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 0.5rem;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .weather-detail i {
+                opacity: 0.8;
+            }
+            .loading {
+                text-align: center;
+                padding: 2rem;
+                opacity: 0.7;
+            }
+            .error {
+                background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+                color: white;
+                padding: 1rem;
+                border-radius: 10px;
+                text-align: center;
+                margin: 1rem 0;
+            }
+            .last-updated {
+                text-align: center;
+                font-size: 0.8rem;
+                opacity: 0.7;
+                margin-top: 1rem;
+            }
+            @media (max-width: 768px) {
+                .weather-locations {
+                    grid-template-columns: 1fr;
+                }
+                .weather-main {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+                .weather-details {
+                    grid-template-columns: 1fr;
+                }
+            }
+            </style>
             <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    console.log('Inicializando el widget meteorológico en la página 9');
-                    initializeWeatherWidget([
-                        { id: 'weather-zurich', name: 'Zúrich', lat: 47.3769, lon: 8.5417 }
-                    ]);
-                });
+class WeatherPlugin {
+    constructor() {
+        this.apiKey = '0bd483ef3c7bff2f1ab67288d35d6539';
+        this.locations = [
+            { id: 'weather-zurich', name: 'Zúrich', lat: 47.3769, lon: 8.5417 }
+        ];
+        this.baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
+        this.init();
+    }
+    init() {
+        this.loadWeatherData();
+        setInterval(() => this.loadWeatherData(), 600000);
+    }
+    async loadWeatherData() {
+        for (const location of this.locations) {
+            try {
+                await this.fetchWeatherData(location);
+            } catch (error) {
+                console.error(`Error loading weather for ${location.name}:`, error);
+                this.displayError(location.id, `Error al cargar datos de ${location.name}`);
+            }
+        }
+        this.updateLastUpdated();
+    }
+    async fetchWeatherData(location) {
+        const response = await fetch(`${this.baseUrl}?lat=${location.lat}&lon=${location.lon}&appid=${this.apiKey}&units=metric&lang=es`);
+        if (!response.ok) {
+            throw new Error(`Error en la respuesta: ${response.status}`);
+        }
+        const data = await response.json();
+        this.displayWeatherData(location.id, data);
+    }
+    displayWeatherData(elementId, data) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        const weather = data.weather[0];
+        const temp = Math.round(data.main.temp);
+        const humidity = data.main.humidity;
+        const windSpeed = data.wind.speed;
+        const pressure = data.main.pressure;
+        let locationName = 'Zúrich';
+        element.innerHTML = `
+            <h4><i class="fas fa-map-marker-alt"></i> ${locationName}</h4>
+            <div class="weather-main">
+                <i class="weather-icon fas fa-cloud"></i>
+                <div class="weather-temp">${temp}°C</div>
+            </div>
+            <div class="weather-condition">${weather.description}</div>
+            <div class="weather-details">
+                <div class="weather-detail">
+                    <i class="fas fa-tint"></i>
+                    <span>Humedad: ${humidity}%</span>
+                </div>
+                <div class="weather-detail">
+                    <i class="fas fa-wind"></i>
+                    <span>Viento: ${windSpeed} m/s</span>
+                </div>
+                <div class="weather-detail">
+                    <i class="fas fa-thermometer-half"></i>
+                    <span>Presión: ${pressure} hPa</span>
+                </div>
+            </div>
+        `;
+    }
+    displayError(elementId, message) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        element.innerHTML = `
+            <div class="error">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>${message}</p>
+            </div>
+        `;
+    }
+    updateLastUpdated() {
+        const lastUpdatedElement = document.getElementById('last-updated');
+        if (lastUpdatedElement) {
+            const now = new Date();
+            const timeString = now.toLocaleString('es-ES', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            lastUpdatedElement.textContent = `Última actualización: ${timeString}`;
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    window.weatherPlugin = new WeatherPlugin();
+});
             </script>
         </div>
     </div>

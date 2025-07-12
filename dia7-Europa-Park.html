@@ -23,13 +23,52 @@
                 <li><strong>Distancia total:</strong> 100 km (~1 hora y 30 minutos).</li>
             </ul>
             <h3>Plan para el Día</h3>
-            <p>Europa-Park abre de 9:00 a al menos las 18:00 durante la temporada de verano. Aquí tienes una sugerencia para aprovechar tu visita:</p>
-            <ul>
-                <li>Llega temprano para evitar colas en las atracciones más populares.</li>
-                <li>Prioriza las montañas rusas principales como <strong>Silver Star</strong>, <strong>Blue Fire</strong> y <strong>Wodan</strong>.</li>
-                <li>Explora las áreas temáticas como <strong>Alemania</strong>, <strong>Francia</strong> e <strong>Islandia</strong>.</li>
-                <li>Disfruta de espectáculos como <strong>El espectáculo de patinaje sobre hielo</strong>.</li>
-            </ul>
+            <div class="info-card">
+                <ul>
+                    <li><strong>🕗 8:30 – Llegada al parque</strong><br>
+                        Llegar al menos 30 minutos antes de la apertura para evitar colas y aparcar con calma.<br>
+                        Descargar la app oficial de Europa‑Park (muy útil para tiempos de espera y mapas).<br>
+                        Activar el VirtualLine (si está disponible) para reservar colas virtuales en atracciones populares.
+                    </li>
+                    <li><strong>🌀 9:00 – 11:30 | Adrenalina por la mañana</strong><br>
+                        Dirígete directamente a la zona de Islandia:<br>
+                        🎢 Blue Fire Megacoaster (0–100 km/h en 2,5 s)<br>
+                        🎢 Wodan – Timbur Coaster (montaña rusa de madera espectacular)<br>
+                        Luego cruza hacia Grecia o Francia para probar:<br>
+                        🎢 Poseidon (coaster acuática griega)<br>
+                        🚀 Eurosat – CanCan Coaster<br>
+                        <em>Consejo: Visita primero las atracciones más populares del fondo del parque para evitar colas.</em>
+                    </li>
+                    <li><strong>👨‍👩‍👧 11:30 – 13:00 | Atracciones familiares y zonas temáticas</strong><br>
+                        🧚‍♂️ Arthur – The Ride (zona MACK indoor, ideal para todos los públicos)<br>
+                        🌍 Voletarium – vuelo simulado por Europa<br>
+                        🚂 Mini‑paseo en tren o monorraíl para descansar y ver el parque desde arriba
+                    </li>
+                    <li><strong>🍝 13:00 – 14:00 | Comida ligera o picnic</strong><br>
+                        Opción rápida y original: FoodLoop (restaurante con raíles donde tu comida viaja en loop)<br>
+                        También puedes llevar picnic y comer en alguna zona tranquila del parque (permitido).
+                    </li>
+                    <li><strong>🎭 14:00 – 16:30 | Shows y ambientación</strong><br>
+                        📍 Ve a la zona de España, Italia y Suiza para:<br>
+                        🎪 Espectáculos diarios como el “Big Show Moments” o “Zorro”<br>
+                        🎭 Ed’s Parade (si coincide con tu horario)<br>
+                        💡 Disfruta las decoraciones únicas de cada país: arquitectura, música y comida típica.
+                    </li>
+                    <li><strong>🔁 16:30 – 18:00 | Últimas atracciones + repetir favoritas</strong><br>
+                        Vuelve a tus favoritas si las colas han bajado.<br>
+                        O aprovecha:<br>
+                        🎢 Voltron Nevera (nueva megacoaster de Croacia)<br>
+                        🌅 Un paseo tranquilo para despedirte del parque
+                    </li>
+                </ul>
+                <h4>📌 Consejos finales</h4>
+                <ul>
+                    <li>✅ Usa la app para ver tiempos de espera en tiempo real</li>
+                    <li>✅ Lleva ropa cómoda y algo impermeable (hay atracciones de agua)</li>
+                    <li>✅ No hace falta correr: el parque está muy bien distribuido</li>
+                    <li>✅ Hay muchas zonas para descansar con sombra o bancos</li>
+                </ul>
+            </div>
             <div class="image-container">
                 <img src="images/dia7/EuropaPark.jpg" alt="Europa-Park" style="width:100%; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
                 <p>Vista de Europa-Park, uno de los parques temáticos más populares de Europa.</p>
@@ -81,20 +120,95 @@
                     <li><strong>Total estimado:</strong> <span style="color:#4CAF50; font-weight:bold;">413 €</span></li>
                 </ul>
             </div>
-            <div id="weather-widget">
+            <div class="weather-widget" id="weather-widget">
                 <h3><i class="fas fa-cloud-sun"></i> El Tiempo Actual</h3>
                 <div class="weather-locations">
-                    <!-- Las ubicaciones se inyectarán dinámicamente -->
+                    <div class="weather-location" id="weather-europa-park">
+                        <h4><i class="fas fa-map-marker-alt"></i> Europa-Park</h4>
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i> Cargando datos del tiempo...
+                        </div>
+                    </div>
                 </div>
                 <div class="last-updated" id="last-updated"></div>
             </div>
-            <script src="weather-widget.js"></script>
             <script>
+                class WeatherPlugin {
+                    constructor() {
+                        this.apiKey = '0bd483ef3c7bff2f1ab67288d35d6539';
+                        this.locations = [
+                            { id: 'weather-europa-park', name: 'Europa-Park', lat: 48.2672, lon: 7.7211 }
+                        ];
+                        this.baseUrl = 'https://api.openweathermap.org/data/2.5/forecast';
+                        this.init();
+                    }
+
+                    init() {
+                        this.loadWeatherData();
+                        setInterval(() => this.loadWeatherData(), 600000);
+                    }
+
+                    async loadWeatherData() {
+                        for (const location of this.locations) {
+                            try {
+                                await this.fetchWeatherData(location);
+                            } catch (error) {
+                                console.error(`Error loading weather for ${location.name}:`, error);
+                                this.displayError(location.id, `Error al cargar datos de ${location.name}`);
+                            }
+                        }
+                    }
+
+                    async fetchWeatherData(location) {
+                        const response = await fetch(`${this.baseUrl}?lat=${location.lat}&lon=${location.lon}&appid=${this.apiKey}&units=metric&lang=es`);
+                        if (!response.ok) {
+                            throw new Error(`Error en la respuesta: ${response.status}`);
+                        }
+                        const data = await response.json();
+                        this.displayWeatherForecast(location.id, data);
+                    }
+
+                    displayWeatherForecast(elementId, data) {
+                        const element = document.getElementById(elementId);
+                        if (!element) return;
+
+                        const forecasts = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+                        const forecastHtml = forecasts.map(forecast => {
+                            const date = new Date(forecast.dt * 1000);
+                            const temp = Math.round(forecast.main.temp);
+                            const description = forecast.weather[0].description;
+                            return `
+                                <div class="forecast-item">
+                                    <span class="forecast-date">${date.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}</span>
+                                    <span class="forecast-temp">${temp}°C</span>
+                                    <span class="forecast-desc">${description}</span>
+                                </div>
+                            `;
+                        }).join('');
+
+                        element.innerHTML = `
+                            <h4><i class="fas fa-map-marker-alt"></i> ${data.city.name}</h4>
+                            <div class="forecast-container">
+                                ${forecastHtml}
+                            </div>
+                        `;
+                    }
+
+                    displayError(elementId, message) {
+                        const element = document.getElementById(elementId);
+                        if (!element) return;
+
+                        element.innerHTML = `
+                            <div class="error">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p>${message}</p>
+                            </div>
+                        `;
+                    }
+                }
+
                 document.addEventListener('DOMContentLoaded', function() {
-                    console.log('Inicializando el widget meteorológico en la página 7');
-                    initializeWeatherWidget([
-                        { id: 'weather-europa-park', name: 'Europa-Park', lat: 48.2672, lon: 7.7211 }
-                    ]);
+                    window.weatherPlugin = new WeatherPlugin();
                 });
             </script>
         </div>

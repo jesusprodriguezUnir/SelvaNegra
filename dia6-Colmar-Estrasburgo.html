@@ -42,6 +42,16 @@
                 <p>Vista del casco antiguo de Friburgo y su catedral gótica.</p>
             </div>
             <h3>Itinerario en Estrasburgo</h3>
+
+            <div class="info-card" style="background:#f5f5f5; border-left:4px solid #4CAF50; margin-bottom:1.5rem;">
+                <h3>Recomendaciones para Colmar</h3>
+                <ul>
+                    <li><strong>Para aparcar fácilmente:</strong> Usa el Parking Lacarre (3 €/día con carga eléctrica).</li>
+                    <li><strong>Aparcamiento gratuito:</strong> Calles en zona azul con disco, o parkings gratuitos como Montagne Verte o Ancienne Douane (unos 10 minutos caminando al centro).</li>
+                    <li><strong>Compras rápidas:</strong> Marché Couvert o una épicerie local en el centro.</li>
+                    <li><strong>Compras grandes:</strong> Para un desayuno largo o cena en el hotel, conduce al Leclerc o Cora.</li>
+                </ul>
+            </div>
             <p>Aquí tienes un itinerario sugerido para un día en Estrasburgo:</p>
             <h4>Mañana</h4>
             <ul>
@@ -80,20 +90,109 @@
                     <li><strong>Total estimado:</strong> <span style="color:#4CAF50; font-weight:bold;">265 €</span></li>
                 </ul>
             </div>
-            <div id="weather-widget">
+            <div class="weather-widget" id="weather-widget">
                 <h3><i class="fas fa-cloud-sun"></i> El Tiempo Actual</h3>
                 <div class="weather-locations">
-                    <!-- Las ubicaciones se inyectarán dinámicamente -->
+                    <div class="weather-location" id="weather-colmar">
+                        <h4><i class="fas fa-map-marker-alt"></i> Colmar</h4>
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i> Cargando datos del tiempo...
+                        </div>
+                    </div>
+                    <div class="weather-location" id="weather-friburgo">
+                        <h4><i class="fas fa-map-marker-alt"></i> Friburgo</h4>
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i> Cargando datos del tiempo...
+                        </div>
+                    </div>
+                    <div class="weather-location" id="weather-estrasburgo">
+                        <h4><i class="fas fa-map-marker-alt"></i> Estrasburgo</h4>
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i> Cargando datos del tiempo...
+                        </div>
+                    </div>
                 </div>
                 <div class="last-updated" id="last-updated"></div>
             </div>
-            <script src="weather-widget.js"></script>
             <script>
+                class WeatherPlugin {
+                    constructor() {
+                        this.apiKey = '0bd483ef3c7bff2f1ab67288d35d6539';
+                        this.locations = [
+                            { id: 'weather-colmar', name: 'Colmar', lat: 48.0795, lon: 7.3585 },
+                            { id: 'weather-friburgo', name: 'Friburgo', lat: 47.9990, lon: 7.8421 },
+                            { id: 'weather-estrasburgo', name: 'Estrasburgo', lat: 48.5734, lon: 7.7521 }
+                        ];
+                        this.baseUrl = 'https://api.openweathermap.org/data/2.5/forecast';
+                        this.init();
+                    }
+
+                    init() {
+                        this.loadWeatherData();
+                        setInterval(() => this.loadWeatherData(), 600000);
+                    }
+
+                    async loadWeatherData() {
+                        for (const location of this.locations) {
+                            try {
+                                await this.fetchWeatherData(location);
+                            } catch (error) {
+                                console.error(`Error loading weather for ${location.name}:`, error);
+                                this.displayError(location.id, `Error al cargar datos de ${location.name}`);
+                            }
+                        }
+                    }
+
+                    async fetchWeatherData(location) {
+                        const response = await fetch(`${this.baseUrl}?lat=${location.lat}&lon=${location.lon}&appid=${this.apiKey}&units=metric&lang=es`);
+                        if (!response.ok) {
+                            throw new Error(`Error en la respuesta: ${response.status}`);
+                        }
+                        const data = await response.json();
+                        this.displayWeatherForecast(location.id, data);
+                    }
+
+                    displayWeatherForecast(elementId, data) {
+                        const element = document.getElementById(elementId);
+                        if (!element) return;
+
+                        const forecasts = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+                        const forecastHtml = forecasts.map(forecast => {
+                            const date = new Date(forecast.dt * 1000);
+                            const temp = Math.round(forecast.main.temp);
+                            const description = forecast.weather[0].description;
+                            return `
+                                <div class="forecast-item">
+                                    <span class="forecast-date">${date.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}</span>
+                                    <span class="forecast-temp">${temp}°C</span>
+                                    <span class="forecast-desc">${description}</span>
+                                </div>
+                            `;
+                        }).join('');
+
+                        element.innerHTML = `
+                            <h4><i class="fas fa-map-marker-alt"></i> ${data.city.name}</h4>
+                            <div class="forecast-container">
+                                ${forecastHtml}
+                            </div>
+                        `;
+                    }
+
+                    displayError(elementId, message) {
+                        const element = document.getElementById(elementId);
+                        if (!element) return;
+
+                        element.innerHTML = `
+                            <div class="error">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p>${message}</p>
+                            </div>
+                        `;
+                    }
+                }
+
                 document.addEventListener('DOMContentLoaded', function() {
-                    console.log('Inicializando el widget meteorológico en la página 6');
-                    initializeWeatherWidget([
-                        { id: 'weather-estrasburgo', name: 'Estrasburgo', lat: 48.5734, lon: 7.7521 }
-                    ]);
+                    window.weatherPlugin = new WeatherPlugin();
                 });
             </script>
         </div>
