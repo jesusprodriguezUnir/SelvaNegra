@@ -26,13 +26,22 @@
                     <li><strong>Distancia total:</strong> 700 km desde Madrid hasta Figueres</li>
                     <li><strong>Tiempo estimado:</strong> 8 horas aproximadamente</li>
                     <li><strong>Ruta recomendada:</strong> A-2 hacia Zaragoza, continuando hacia Figueres</li>
-                    <li><strong>Paradas sugeridas:</strong> Cada 2 horas para descansar</li>
                 </ul>
             </div>
+
 
             <div class="info-card" style="background:#f5f5f5; border-left:4px solid #4CAF50; margin-bottom:1.5rem;">
                 <h3><i class="fas fa-coffee"></i> Desayuno recomendado</h3>
                 <p>Se recomienda desayunar en el <strong>Área 103</strong> (A2, km 103, cerca de Almadrones, Guadalajara), un área de servicio amplia y cómoda para hacer una parada antes de continuar el viaje.</p>
+            </div>
+
+            <div class="info-card" style="background:#f5f5f5; border-left:4px solid #009688; margin-bottom:1.5rem;">
+                <h3><i class="fas fa-gas-pump"></i> Área de servicio recomendada para repostar</h3>
+                <p><strong>BonÀrea (Autovía A‑2, km 311)</strong></p>
+                <ul>
+                    <li><strong>Gasolina 95:</strong> 1,305 €/l</li>
+                    <li><strong>Accesible y abierta 24 h</strong>, ideal al salir o entrar por la A‑2.</li>
+                </ul>
             </div>
 
             <div class="info-card" style="background:#f5f5f5; border-left:4px solid #FF9800; margin-bottom:1.5rem;">
@@ -99,8 +108,9 @@
                     <li><strong>Cena:</strong> 40 €</li>
                     <li><strong>Alojamiento Sercotel Hotel President:</strong> 105 €</li>
                     <li><strong>Peajes:</strong> 0 € (ruta sin peajes)</li>
+                    <li><strong>Entradas Museo:</strong> 50 € (ruta sin peajes)</li>
                     <li><strong>Gasolina:</strong> 80 € (770 km, consumo 7l/100km, 1.40€/l)</li>
-                    <li><strong>Total estimado del día:</strong> 270 €</li>
+                    <li><strong>Total estimado del día:</strong> 320 €</li>
                 </ul>
             </div>
 
@@ -123,132 +133,7 @@
                 <div class="last-updated" id="last-updated"></div>
             </div>
 
-            <style>
-            /* CSS para el widget del tiempo */
-            .weather-widget {
-                background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-                border-radius: 20px;
-                padding: 2rem;
-                margin: 2rem 0;
-                color: white;
-                box-shadow: 0 15px 35px rgba(116, 185, 255, 0.3);
-            }
-
-            .weather-widget h3 {
-                text-align: center;
-                margin-bottom: 1.5rem;
-                font-size: 1.5rem;
-                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            }
-
-            .weather-locations {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 1.5rem;
-            }
-
-            .weather-location {
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                border-radius: 15px;
-                padding: 1.5rem;
-                text-align: center;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .weather-location:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            }
-
-            .weather-location h4 {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
-                color: #fff;
-            }
-
-            .weather-main {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 1rem;
-                margin-bottom: 1rem;
-            }
-
-            .weather-icon {
-                font-size: 3rem;
-                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            }
-
-            .weather-temp {
-                font-size: 2.5rem;
-                font-weight: 700;
-                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            }
-
-            .weather-condition {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-                opacity: 0.9;
-            }
-
-            .weather-details {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 0.5rem;
-                font-size: 0.9rem;
-            }
-
-            .weather-detail {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 0.5rem;
-                border-radius: 8px;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .weather-detail i {
-                opacity: 0.8;
-            }
-
-            .loading {
-                text-align: center;
-                padding: 2rem;
-                opacity: 0.7;
-            }
-
-            .error {
-                background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
-                color: white;
-                padding: 1rem;
-                border-radius: 10px;
-                text-align: center;
-                margin: 1rem 0;
-            }
-
-            .last-updated {
-                text-align: center;
-                font-size: 0.8rem;
-                opacity: 0.7;
-                margin-top: 1rem;
-            }
-
-            @media (max-width: 768px) {
-                .weather-locations {
-                    grid-template-columns: 1fr;
-                }
-                
-                .weather-main {
-                    flex-direction: column;
-                    gap: 0.5rem;
-                }
-                
-                .weather-details {
-                    grid-template-columns: 1fr;
-                }
-            }
-            </style>
+            <link rel="stylesheet" href="weather-widget.css">
 
             <script>
             class WeatherPlugin {
@@ -353,6 +238,7 @@
                 }
             }
 
+            // Inicializar el plugin cuando se carga la página
             document.addEventListener('DOMContentLoaded', function() {
                 window.weatherPlugin = new WeatherPlugin();
             });
